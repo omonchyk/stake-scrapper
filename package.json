@@ -1,7 +1,7 @@
 {
   "name": "stake-scrapper",
   "version": "0.1.0",
-  "homepage": "https://omonchyk.github.io/react-gh-pages",
+  "homepage": "https://omonchyk.github.io/stake-scrapper",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.11.1",
