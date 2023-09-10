@@ -1,6 +1,6 @@
 import { Bet, Outcome, SportSlug } from '../types/stake.types';
 
-const symbolsToIgnore = new Set(['USDC/USDT', 'USDT/USDT', 'CAD/USDT', 'BRL/USDT', 'JPY/USDT']);
+const symbolsToIgnore = new Set(['USDC/USDT', 'USDT/USDT', 'CAD/USDT', 'BRL/USDT', 'JPY/USDT', 'INR/USDT']);
 
 export const getSymbolFromBet = (bet: Bet): string => {
   return `${bet.currency.toUpperCase()}/USDT`;
