@@ -3,12 +3,12 @@ import { getEventName, getSportSlug, getSymbolFromBet } from '../selectors/stake
 import { SportBet } from '../types/sportBet.types';
 import { Bet } from '../types/stake.types';
 
-const fiatCurrencies = new Set(['cad', 'usd', 'usdt', 'usdc', 'brl', 'jpy', 'irl']);
+const fiatCurrencies = new Set(['cad', 'usd', 'usdt', 'usdc', 'brl', 'jpy', 'inr']);
 
 export const transformFromStakeBet = (stakeBet: Bet, exchangeTicker: Dictionary<Ticker>): SportBet => {
   const isFiatCurrency = fiatCurrencies.has(stakeBet.currency);
   const symbol = getSymbolFromBet(stakeBet);
-  console.log('exchangeTicker', exchangeTicker);
+  console.log('exchangeTicker', exchangeTicker, symbol);
   const amount = isFiatCurrency ? stakeBet.amount : stakeBet.amount * (exchangeTicker[symbol].last ?? exchangeTicker[symbol].high);
   const currency = isFiatCurrency ? stakeBet.currency.toUpperCase() : 'USDT';
   const originalCurrency = isFiatCurrency ? null : stakeBet.currency.toUpperCase();
